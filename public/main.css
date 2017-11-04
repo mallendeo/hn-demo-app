@@ -1,0 +1,12 @@
+.container {
+  margin-top: 1rem;
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.table-row__link {
+  pointer-events: none;
+}
+
