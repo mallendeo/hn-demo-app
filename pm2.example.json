@@ -1,0 +1,6 @@
+{
+  "apps": [{
+    "name": "hn-demo-app",
+    "script": "app.js"
+  }]
+}
