@@ -7,6 +7,7 @@ async function getPosts (limit = 20) {
   const posts = await Post
     .find({})
     .limit(limit)
+    .sort({ created_at: -1 })
     .where('deleted').ne(true)
     .lean()
 
@@ -32,6 +33,7 @@ async function insertPosts (posts) {
 }
 
 async function deletePost (id) {
+  // Mark it as deleted instead of actually removing it
   return Post.update({ _id: id }, { $set: { deleted: true }})
 }
 
