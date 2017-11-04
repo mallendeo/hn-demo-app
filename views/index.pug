@@ -7,5 +7,15 @@ html(lang="en")
     link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
     title HN Feed App for Reign Design
   body
-    h1 HN App
+    .container
+      .jumbotron
+        h1 HN Feed
+        h2 We ❤️ hacker news!
+      ul.list-group
+        each post in posts
+          li.list-group-item
+            a(href=`https://news.ycombinator.com/item?id=${post.objectID}`)
+              strong= post.title
+              small= post.author
+
     script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.min.js")

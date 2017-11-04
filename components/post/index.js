@@ -2,6 +2,10 @@
 
 const Post = require('./model')
 
+async function getPosts (limit = 20) {
+  return Post.find({}).limit(limit)
+}
+
 async function insertPosts (posts) {
   const [last] = await Post.find({}).sort({ objectID: -1 }).limit(1)
 
@@ -18,10 +22,11 @@ async function insertPosts (posts) {
 }
 
 async function deletePost (id) {
-  await Post.update({ _id: id }, { $set: { deleted: true }})
+  return Post.update({ _id: id }, { $set: { deleted: true }})
 }
 
 module.exports = {
+  getPosts,
   insertPosts,
   deletePost
 }

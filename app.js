@@ -41,8 +41,10 @@ db.on('error', e => console.error(`Connection error: ${e}`))
 app.set('view engine', 'pug')
 app.use(express.static(`${__dirname}/public`))
 
-app.get('/', (req, res) => {
-  res.render('index.pug')
+app.get('/', async (req, res) => {
+  res.render('index.pug', {
+    posts: await post.getPosts()
+  })
 })
 
 app.listen(PORT, () => {
