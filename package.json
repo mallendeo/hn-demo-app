@@ -1,0 +1,19 @@
+{
+  "name": "hn-demo-app",
+  "version": "1.0.0",
+  "description": "HN Feed App for Reign Design",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "express": "^4.16.2",
+    "moment": "^2.19.1",
+    "mongoose": "^4.13.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "mallendeo",
+  "license": "MIT"
+}
