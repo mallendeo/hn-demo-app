@@ -10,3 +10,16 @@
   pointer-events: none;
 }
 
+.app__header {
+  background: #374656;
+}
+
+h1.app__title,
+h2.app__subtitle {
+  color: #9FFEE2;
+}
+
+h2.app__subtitle {
+  font-weight: 300;
+  letter-spacing: .15rem;
+}  

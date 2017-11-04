@@ -6,12 +6,13 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
     link(href="main.css", rel="stylesheet")
+    link(rel="shortcut icon", href="favicon.png", type="image/png")
     title HN Feed App for Reign Design
   body
     .container
-      .jumbotron
-        h1 HN Feed
-        h2 We ❤️ hacker news!
+      .jumbotron.app__header
+        h1.app__title HN Feed
+        h2.app__subtitle We ❤️ hacker news!
 
       table.table.table-hover
         tbody
