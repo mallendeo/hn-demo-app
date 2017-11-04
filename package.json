@@ -2,7 +2,7 @@
   "name": "hn-demo-app",
   "version": "1.0.0",
   "description": "HN Feed App for Reign Design",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "axios": "^0.17.0",
     "express": "^4.16.2",
@@ -12,8 +12,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js",
+    "watch": "nodemon"
   },
   "author": "mallendeo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
 }
