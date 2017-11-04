@@ -1,17 +1,43 @@
 # hn-demo-app
 
-# Clone & Install
+Hacker News feed demo App for Reign Design.
+
+## Clone & Install
 
 ```bash
+$ git clone https://github.com/mallendeo/hn-demo-app
+$ cd hn-demo-app
 $ yarn # or npm install
 ```
 
-*TODO:* Install MongoDB
+## MongoDB
+
+For this demo, a running MongoDB instance is required.
+
+### With Docker
+```bash
+$ docker run --name hn-demo-mongo -p 27017:27017 -d mongo
+```
+
+### Without Docker
+
+macOS
+
+```bash
+$ brew install mongodb --with-openssl
+```
+
+Linux / Ubuntu 16.04
+
+```bash
+$ echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+$ sudo apt-get update
+$ sudo apt-get install -y mongodb-org
+```
 
 ## Set environment variables
 
 ```bash
-$ export NODE_ENV=production
 $ export PORT=3000
 $ export MONGO_DB_PORT=27017
 
