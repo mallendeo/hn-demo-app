@@ -11,10 +11,20 @@ async function getPosts (limit = 20) {
     .where('deleted').ne(true)
     .lean()
 
-  return posts.map(post => ({
-    ...post,
-    fromNow: moment(post.created_at).fromNow()
-  }))
+  return posts.map(post => {
+    const timestamp = moment(post.created_at)
+
+    const today = moment().startOf('day')
+    const yesterday = moment().subtract(1, 'days').startOf('day')
+    
+    return {
+      ...post,
+      fromNow:
+        timestamp.isSame(today, 'd') && timestamp.format('hh:mm a') ||
+        timestamp.isSame(yesterday, 'd') && 'Yesterday' ||
+        timestamp.format('MMM DD')
+    }
+  })
 }
 
 async function insertPosts (posts) {
