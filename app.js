@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 
 const hn = require('./lib/hn')
 const post = require('./components/post')
+const postRouter = require('./components/post/router')
 
 const {
   PORT = 3000,
@@ -38,8 +39,15 @@ db.on('error', e => console.error(`Connection error: ${e}`))
   setInterval(retrieveAndSavePosts, min(60))
 })()
 
+const router = new express.Router()
+
 app.set('view engine', 'pug')
 app.use(express.static(`${__dirname}/public`))
+
+// inject post router
+postRouter(router)
+
+app.use('/posts', router)
 
 app.get('/', async (req, res) => {
   res.render('index.pug', {
