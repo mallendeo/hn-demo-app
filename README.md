@@ -38,6 +38,7 @@ $ sudo apt-get install -y mongodb-org
 ## Set environment variables
 
 ```bash
+$ export NODE_ENV=production
 $ export PORT=3000
 $ export MONGO_DB_PORT=27017
 
@@ -55,6 +56,17 @@ $ npm run watch
 **Production**
 ```bash
 $ npm start
+```
+
+# PM2
+
+For monitoring and running this app continuously, you can install pm2 globally or use the pm2 Docker image.
+The provided pm2 example includes the mongo connection string which uses the Docker container hostname.
+(`mongodb://hn-demo-mongo:27017`)
+
+```bash
+$ docker build -t hn-demo-app .
+$ docker run --name hn-app --link hn-demo-mongo:mongo -p 3000:3000 --restart=always -d hn-demo-app
 ```
 
 # License
