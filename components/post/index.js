@@ -4,7 +4,11 @@ const Post = require('./model')
 const moment = require('moment')
 
 async function getPosts (limit = 20) {
-  const posts = await Post.find({}).limit(limit).lean()
+  const posts = await Post
+    .find({})
+    .limit(limit)
+    .where('deleted').ne(true)
+    .lean()
 
   return posts.map(post => ({
     ...post,
