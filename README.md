@@ -1,6 +1,8 @@
 # hn-demo-app
 
-Hacker News feed demo App for Reign Design.
+Hacker News feed demo app for Reign Design.
+
+[hn.mallendeo.com](https://hn.mallendeo.com)
 
 ## Clone & Install
 
