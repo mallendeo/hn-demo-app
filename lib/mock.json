@@ -1,0 +1,1006 @@
+{
+  "hits": [
+    {
+      "created_at": "2017-11-04T18:01:37.000Z",
+      "title": null,
+      "url": null,
+      "author": "markoshust",
+      "points": null,
+      "story_text": null,
+      "comment_text": "I&#x27;ve had great success with Meteor. I started with v1.2, and it was quite painful to develop in. However, with improvements start within 1.3 and onward, every release has gotten better. Meteor 1.6 has the same concepts as Meteor 1.0, however it is extremely different and is up to date with standards of the Node&#x2F;JS ecosystem.<p>I think it&#x27;s important to know it&#x27;s application and use-case. I use it for a hybrid iOS&#x2F;Android app, and Meteor + Cordova has been fantastic in terms of developer productivity for a small&#x2F;medium-sized app. As a startup, I wouldn&#x27;t consider anything else right now for new projects. React Native has a higher learning overhead, and with other architectures you always have to deal with user registration &amp; authentication, something Meteor supplies out of the box.<p>In terms of performance, it is important to understand the core concepts of Meteor. This is not easy. The reactivity layer and publish concepts make it extremely easy to overpublish data, reckoning your Meteor app completely useless. Afaik, something like Kadira is required for Meteor apps, as it will quickly tell you when something is wrong. If a Meteor app is correctly designed, it should rarely have performance issues.<p>I&#x27;ve wanted to integrate Redux into my Meteor app, however there are a lot of moving parts getting both working together, so I&#x27;m opting for smaller container components. React performance is tricky in any case, and Meteor + React is no exception. This combo makes it a bit difficult to diagnose performance issues on the rendering layer. I would love to migrate to VueJS, however the it would require a complete re-write, just as I&#x27;m getting comfy with React. I would highly recommend VueJS + Meteor + Vuex over Meteor + React for new projects, so you don&#x27;t deal with diagnosing rendering performance problems with Meteor&#x27;s reactivity layer.<p>You can definitely run your own React stack that is decoupled. For a larger app, I would recommend going this route, due to the big build system of Meteor. Once your app gets a bit too large, the builds still take forever. You can offset it by using something like React Storybook with hot module reloads, but if you have a high number of users or a requirement to not use Mongo, you are better moving the other way. Meteor Development Group is moving out of the built-in reactivity layer that it is known for, and into GraphQL. I&#x27;m not planning to move to this new architecture anytime soon, and will run with Meteor&#x27;s reactivity layer for the foreseeable future. I&#x27;m concerned once the reactivity layer loses focus and development, that Meteor may start to fade away. GraphQL has a high learning overhead IMO and presents it&#x27;s own sets of issues. Perhaps those will be worked out over time.<p>My 2c. Without Meteor I wouldn&#x27;t have a real-time web app as nice as I do now with both iOS and Android builds, up and running as quickly and easily as I have. It&#x27;s been a godsend.",
+      "num_comments": null,
+      "story_id": 15624623,
+      "story_title": "Ask HN: Is Meteor.js still a thing?",
+      "story_url": null,
+      "parent_id": 15624623,
+      "created_at_i": 1509818497,
+      "_tags": [
+        "comment",
+        "author_markoshust",
+        "story_15624623"
+      ],
+      "objectID": "15626146",
+      "_highlightResult": {
+        "author": {
+          "value": "markoshust",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "I've had great success with Meteor. I started with v1.2, and it was quite painful to develop in. However, with improvements start within 1.3 and onward, every release has gotten better. Meteor 1.6 has the same concepts as Meteor 1.0, however it is extremely different and is up to date with standards of the <em>Node\/JS<\/em> ecosystem.<p>I think it's important to know it's application and use-case. I use it for a hybrid iOS\/Android app, and Meteor + Cordova has been fantastic in terms of developer productivity for a small\/medium-sized app. As a startup, I wouldn't consider anything else right now for new projects. React Native has a higher learning overhead, and with other architectures you always have to deal with user registration &amp; authentication, something Meteor supplies out of the box.<p>In terms of performance, it is important to understand the core concepts of Meteor. This is not easy. The reactivity layer and publish concepts make it extremely easy to overpublish data, reckoning your Meteor app completely useless. Afaik, something like Kadira is required for Meteor apps, as it will quickly tell you when something is wrong. If a Meteor app is correctly designed, it should rarely have performance issues.<p>I've wanted to integrate Redux into my Meteor app, however there are a lot of moving parts getting both working together, so I'm opting for smaller container components. React performance is tricky in any case, and Meteor + React is no exception. This combo makes it a bit difficult to diagnose performance issues on the rendering layer. I would love to migrate to VueJS, however the it would require a complete re-write, just as I'm getting comfy with React. I would highly recommend VueJS + Meteor + Vuex over Meteor + React for new projects, so you don't deal with diagnosing rendering performance problems with Meteor's reactivity layer.<p>You can definitely run your own React stack that is decoupled. For a larger app, I would recommend going this route, due to the big build system of Meteor. Once your app gets a bit too large, the builds still take forever. You can offset it by using something like React Storybook with hot module reloads, but if you have a high number of users or a requirement to not use Mongo, you are better moving the other way. Meteor Development Group is moving out of the built-in reactivity layer that it is known for, and into GraphQL. I'm not planning to move to this new architecture anytime soon, and will run with Meteor's reactivity layer for the foreseeable future. I'm concerned once the reactivity layer loses focus and development, that Meteor may start to fade away. GraphQL has a high learning overhead IMO and presents it's own sets of issues. Perhaps those will be worked out over time.<p>My 2c. Without Meteor I wouldn't have a real-time web app as nice as I do now with both iOS and Android builds, up and running as quickly and easily as I have. It's been a godsend.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Ask HN: Is Meteor.js still a thing?",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T17:15:45.000Z",
+      "title": null,
+      "url": null,
+      "author": "dcosson",
+      "points": null,
+      "story_text": null,
+      "comment_text": "Yeah it looks nicely simple &amp; modular, but it probably works best in Node.js since your servers can all be in UTC.<p>In general I see the appeal of using a small shim around a standard library thing rather than re-implementing something totally new, but JS Date is bad enough that you&#x27;re better off staying away altogether. It&#x27;s just hard to use correctly since there&#x27;s no &quot;timezone unaware&quot; object available and it always assumes the local timezone, so users&#x27; browsers in different timezones treat them differently. Lots of seemingly simple things (e.g. a time + timezone input picker) are easy to mess up because you end up accidentally implicitly converting things to the local time.",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 A modern Express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15625652,
+      "created_at_i": 1509815745,
+      "_tags": [
+        "comment",
+        "author_dcosson",
+        "story_15624206"
+      ],
+      "objectID": "15625956",
+      "_highlightResult": {
+        "author": {
+          "value": "dcosson",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "Yeah it looks nicely simple &amp; modular, but it probably works best in <em>Node.js<\/em> since your servers can all be in UTC.<p>In general I see the appeal of using a small shim around a standard library thing rather than re-implementing something totally new, but JS Date is bad enough that you're better off staying away altogether. It's just hard to use correctly since there's no &quot;timezone unaware&quot; object available and it always assumes the local timezone, so users' browsers in different timezones treat them differently. Lots of seemingly simple things (e.g. a time + timezone input picker) are easy to mess up because you end up accidentally implicitly converting things to the local time.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 A modern Express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T17:12:23.000Z",
+      "title": null,
+      "url": null,
+      "author": "pgte",
+      "points": null,
+      "story_text": null,
+      "comment_text": "Remote pinning would work as any other node that you give the permissions to read the feed. This node would follow the CRDT changes, persisting them locally.<p>Each keystroke produces a change in the CRDT, which is then eventually propagated to all participating nodes.<p>Each CRDT message is signed and encrypted before being sent over the IPFS pubsub network.<p>This protocol is not IPFS-specific, but there are plans to change this:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;ipfs-shipyard&#x2F;peerpad&#x2F;issues&#x2F;107\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;ipfs-shipyard&#x2F;peerpad&#x2F;issues&#x2F;107<\/a><p>The snapshotting occurs over IPFS, producing a static and encrypted self-contained snapshot, published over IPFS.<p>It is possible to access the CRDT properties inside the core library, where the CRDT is formed: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;ipfs-shipyard&#x2F;peerpad-core&#x2F;blob&#x2F;master&#x2F;src&#x2F;backend&#x2F;crdt.js\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;ipfs-shipyard&#x2F;peerpad-core&#x2F;blob&#x2F;master&#x2F;sr...<\/a> . This could be exposed if you would require it..",
+      "num_comments": null,
+      "story_id": 15624158,
+      "story_title": "PeerPad \u2013 A realtime P2P collaborative editing tool powered by IPFS",
+      "story_url": "https:\/\/peerpad.net\/",
+      "parent_id": 15625595,
+      "created_at_i": 1509815543,
+      "_tags": [
+        "comment",
+        "author_pgte",
+        "story_15624158"
+      ],
+      "objectID": "15625937",
+      "_highlightResult": {
+        "author": {
+          "value": "pgte",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "Remote pinning would work as any other node that you give the permissions to read the feed. This node would follow the CRDT changes, persisting them locally.<p>Each keystroke produces a change in the CRDT, which is then eventually propagated to all participating <em>nodes<\/em>.<p>Each CRDT message is signed and encrypted before being sent over the IPFS pubsub network.<p>This protocol is not IPFS-specific, but there are plans to change this:\n<a href=\"https:\/\/github.com\/ipfs-shipyard\/peerpad\/issues\/107\" rel=\"nofollow\">https:\/\/github.com\/ipfs-shipyard\/peerpad\/issues\/107<\/a><p>The snapshotting occurs over IPFS, producing a static and encrypted self-contained snapshot, published over IPFS.<p>It is possible to access the CRDT properties inside the core library, where the CRDT is formed: <a href=\"https:\/\/github.com\/ipfs-shipyard\/peerpad-core\/blob\/master\/src\/backend\/crdt.js\" rel=\"nofollow\">https:\/\/github.com\/ipfs-shipyard\/peerpad-core\/blob\/master\/sr...<\/a> . This could be exposed if you would require it..",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "PeerPad \u2013 A realtime P2P collaborative editing tool powered by IPFS",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/peerpad.net\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T16:30:18.000Z",
+      "title": null,
+      "url": null,
+      "author": "giovannibajo1",
+      "points": null,
+      "story_text": null,
+      "comment_text": "That is <i>exactly<\/i> what Go does by default. Any time a blocking operation is performed, Go either leaves the OS-level thread blocked there and switches away, or hand the blocking operation to an internal thread which is running epoll for the whole process.<p>The end result is much easier than Python&#x2F;NodeJs because there is no explicit &quot;async&#x2F;await&quot; or deferred-style programming. You simply write linear code and <i>any<\/i> blocking operation (at the syscall level) is transparently handled.",
+      "num_comments": null,
+      "story_id": 15624432,
+      "story_title": "Evio \u2013 Fast event-loop networking for Go",
+      "story_url": "https:\/\/github.com\/tidwall\/evio",
+      "parent_id": 15625394,
+      "created_at_i": 1509813018,
+      "_tags": [
+        "comment",
+        "author_giovannibajo1",
+        "story_15624432"
+      ],
+      "objectID": "15625742",
+      "_highlightResult": {
+        "author": {
+          "value": "giovannibajo1",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "That is <i>exactly<\/i> what Go does by default. Any time a blocking operation is performed, Go either leaves the OS-level thread blocked there and switches away, or hand the blocking operation to an internal thread which is running epoll for the whole process.<p>The end result is much easier than Python\/<em>NodeJs<\/em> because there is no explicit &quot;async\/await&quot; or deferred-style programming. You simply write linear code and <i>any<\/i> blocking operation (at the syscall level) is transparently handled.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Evio \u2013 Fast event-loop networking for Go",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/github.com\/tidwall\/evio",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T16:16:24.000Z",
+      "title": null,
+      "url": null,
+      "author": "always_good",
+      "points": null,
+      "story_text": null,
+      "comment_text": "I think it&#x27;s always just going to be a different-strokes thing.<p>For example, I left the Rails world hungering for tiny, composable solutions like Clojure&#x27;s Ring and Node&#x27;s Koa.<p>I ended up preferring to just see glue code in my git diffs. For me and the small teams I work on, there&#x27;s a lot of productivity to be gained when you can just look at the code and understand what&#x27;s going on.<p>You end up with bespoke glue code per application, but the glue is generally simple so I didn&#x27;t reap much reward from using a framework that tries to hide it at all cost.",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 A modern Express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15625641,
+      "created_at_i": 1509812184,
+      "_tags": [
+        "comment",
+        "author_always_good",
+        "story_15624206"
+      ],
+      "objectID": "15625679",
+      "_highlightResult": {
+        "author": {
+          "value": "always_good",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "I think it's always just going to be a different-strokes thing.<p>For example, I left the Rails world hungering for tiny, composable solutions like Clojure's Ring and <em>Node's<\/em> Koa.<p>I ended up preferring to just see glue code in my git diffs. For me and the small teams I work on, there's a lot of productivity to be gained when you can just look at the code and understand what's going on.<p>You end up with bespoke glue code per application, but the glue is generally simple so I didn't reap much reward from using a framework that tries to hide it at all cost.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 A modern Express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T16:00:48.000Z",
+      "title": null,
+      "url": null,
+      "author": "wmf",
+      "points": null,
+      "story_text": null,
+      "comment_text": "<i>My first idea was flooding with almost non worthy transactions therefore wasting the miners. This was quickly debunked as I found out the miners would ignore &#x27;empty&#x27; transactions.<\/i><p>Also, you have to pay a fee for each transaction and thus you&#x27;d have to pay (at least) thousands of dollars of fees to clog a blockchain. <a href=\"https:&#x2F;&#x2F;bravenewcoin.com&#x2F;news&#x2F;bitcoin-spam-attack-stressed-network-for-at-least-18-months-claims-software-developer&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;bravenewcoin.com&#x2F;news&#x2F;bitcoin-spam-attack-stressed-n...<\/a><p><i>Another idea is, what if I as user A say want to transfer to user B, but I mention an amount of coins that actually I do not own and spam it. Would the miners have to traverse all the way to the back or are there &#x27;checkpoints&#x27; that can assure short travels?<\/i><p>The miners keep an index of how much money everyone has (unspent transaction output index) so they can immediately ignore such invalid transactions.<p><i>The last one is a bit more difficult. However can a big enough network of nodes, insert itself and start crunching the chain errors-fully on purpose to &#x27;break&#x27; the chain?<\/i><p>This is similar to what people call the eclipse attack. However, if a victim node can connect to even one other node that gives it a copy of the correct blockchain then the victim will ignore the errors and use the correct chain. <a href=\"https:&#x2F;&#x2F;www.usenix.org&#x2F;node&#x2F;190891\" rel=\"nofollow\">https:&#x2F;&#x2F;www.usenix.org&#x2F;node&#x2F;190891<\/a>",
+      "num_comments": null,
+      "story_id": 15624942,
+      "story_title": "Ask HN: Are these possible ways to slow down a blockchain?",
+      "story_url": null,
+      "parent_id": 15624942,
+      "created_at_i": 1509811248,
+      "_tags": [
+        "comment",
+        "author_wmf",
+        "story_15624942"
+      ],
+      "objectID": "15625616",
+      "_highlightResult": {
+        "author": {
+          "value": "wmf",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "<i>My first idea was flooding with almost non worthy transactions therefore wasting the miners. This was quickly debunked as I found out the miners would ignore 'empty' transactions.<\/i><p>Also, you have to pay a fee for each transaction and thus you'd have to pay (at least) thousands of dollars of fees to clog a blockchain. <a href=\"https:\/\/bravenewcoin.com\/news\/bitcoin-spam-attack-stressed-network-for-at-least-18-months-claims-software-developer\/\" rel=\"nofollow\">https:\/\/bravenewcoin.com\/news\/bitcoin-spam-attack-stressed-n...<\/a><p><i>Another idea is, what if I as user A say want to transfer to user B, but I mention an amount of coins that actually I do not own and spam it. Would the miners have to traverse all the way to the back or are there 'checkpoints' that can assure short travels?<\/i><p>The miners keep an index of how much money everyone has (unspent transaction output index) so they can immediately ignore such invalid transactions.<p><i>The last one is a bit more difficult. However can a big enough network of <em>nodes<\/em>, insert itself and start crunching the chain errors-fully on purpose to 'break' the chain?<\/i><p>This is similar to what people call the eclipse attack. However, if a victim node can connect to even one other node that gives it a copy of the correct blockchain then the victim will ignore the errors and use the correct chain. <a href=\"https:\/\/www.usenix.org\/node\/190891\" rel=\"nofollow\">https:\/\/www.usenix.org\/node\/190891<\/a>",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Ask HN: Are these possible ways to slow down a blockchain?",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T15:17:55.000Z",
+      "title": null,
+      "url": null,
+      "author": "hannofcart",
+      "points": null,
+      "story_text": null,
+      "comment_text": "&lt;quote&gt;That is, I can write simple blocking code, and my server still scales.\nUsing event loop programming in Go would take away one of my favorite things about the language, so I won&#x27;t be using this.&lt;&#x2F;quote&gt;<p>If Go has or can emulate &#x27;generators&#x27; a-la Python&#x2F;Nodejs,then you can write synchronous looking,blocking-like code with event loops as well.",
+      "num_comments": null,
+      "story_id": 15624432,
+      "story_title": "Evio \u2013 Fast event-loop networking for Go",
+      "story_url": "https:\/\/github.com\/tidwall\/evio",
+      "parent_id": 15624649,
+      "created_at_i": 1509808675,
+      "_tags": [
+        "comment",
+        "author_hannofcart",
+        "story_15624432"
+      ],
+      "objectID": "15625394",
+      "_highlightResult": {
+        "author": {
+          "value": "hannofcart",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "&lt;quote&gt;That is, I can write simple blocking code, and my server still scales.\nUsing event loop programming in Go would take away one of my favorite things about the language, so I won't be using this.&lt;\/quote&gt;<p>If Go has or can emulate 'generators' a-la Python\/<em>Nodejs<\/em>,then you can write synchronous looking,blocking-like code with event loops as well.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Evio \u2013 Fast event-loop networking for Go",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/github.com\/tidwall\/evio",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T15:05:32.000Z",
+      "title": "How to Build Your Own Blockchain Part 3 \u2013 Writing Nodes That Mine and Talk",
+      "url": "https:\/\/bigishdata.com\/2017\/11\/02\/build-your-own-blockchain-part-3-writing-nodes-that-mine\/",
+      "author": "sidcool",
+      "points": 63,
+      "story_text": null,
+      "comment_text": null,
+      "num_comments": 7,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1509807932,
+      "_tags": [
+        "story",
+        "author_sidcool",
+        "story_15625325",
+        "front_page"
+      ],
+      "objectID": "15625325",
+      "_highlightResult": {
+        "title": {
+          "value": "How to Build Your Own Blockchain Part 3 \u2013 Writing <em>Nodes<\/em> That Mine and Talk",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "url": {
+          "value": "https:\/\/bigishdata.com\/2017\/11\/02\/build-your-own-blockchain-part-3-writing-<em>nodes<\/em>-that-mine\/",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "author": {
+          "value": "sidcool",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T14:33:19.000Z",
+      "title": null,
+      "url": null,
+      "author": "jakubk",
+      "points": null,
+      "story_text": null,
+      "comment_text": "Skyscanner | full-time senior and lead hires | London, Barcelona, Edinburgh, Glasgow, Budapest, Sofia | ONSITE, VISA <a href=\"http:&#x2F;&#x2F;www.skyscanner.net&#x2F;jobs&#x2F;\" rel=\"nofollow\">http:&#x2F;&#x2F;www.skyscanner.net&#x2F;jobs&#x2F;<\/a><p>We&#x27;re one of the biggest travel search products in the world. Recently acquired by CTrip, China&#x27;s biggest travel services provider, we have a unique position in the market and are continuing our incredible growth as a tech company. We&#x27;ll soon be a top-100 website in the world by traffic.<p>Hiring at an experienced level in lots of disciplines: backend with microservices &amp; distributed systems, big data &amp; data science &amp; machine learning, full stack (modern frontend + api skills), designers, product, iOS &amp; Android. Languages we like and have great tooling for: Java, Python, JavaScript &amp; Node.js.<p>We have a number of offices in Europe, and are focusing on London and Barcelona in particular.<p>We want to hire great people to solve large-scale challenges and build industry-leading new products. In short, if you&#x27;ve got good software industry and tech company experience, know what best practices look like, and have the drive to improve product and people around you, we&#x27;re interested.<p>I see a lot of freedom, responsibility, accountability here. We have room to make decisions, move fast, and the encouragement to make things better. It&#x27;s exciting.<p>Please ping me an email at jakub.kadlubiec@skyscanner.net if you want me to refer you, and&#x2F;or have questions.\nPermanent &amp; onsite roles only. Relocation &#x2F; visa assistance for senior roles.",
+      "num_comments": null,
+      "story_id": 15601729,
+      "story_title": "Ask HN: Who is hiring? (November 2017)",
+      "story_url": null,
+      "parent_id": 15601729,
+      "created_at_i": 1509805999,
+      "_tags": [
+        "comment",
+        "author_jakubk",
+        "story_15601729"
+      ],
+      "objectID": "15625161",
+      "_highlightResult": {
+        "author": {
+          "value": "jakubk",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "Skyscanner | full-time senior and lead hires | London, Barcelona, Edinburgh, Glasgow, Budapest, Sofia | ONSITE, VISA <a href=\"http:\/\/www.skyscanner.net\/jobs\/\" rel=\"nofollow\">http:\/\/www.skyscanner.net\/jobs\/<\/a><p>We're one of the biggest travel search products in the world. Recently acquired by CTrip, China's biggest travel services provider, we have a unique position in the market and are continuing our incredible growth as a tech company. We'll soon be a top-100 website in the world by traffic.<p>Hiring at an experienced level in lots of disciplines: backend with microservices &amp; distributed systems, big data &amp; data science &amp; machine learning, full stack (modern frontend + api skills), designers, product, iOS &amp; Android. Languages we like and have great tooling for: Java, Python, JavaScript &amp; <em>Node.js<\/em>.<p>We have a number of offices in Europe, and are focusing on London and Barcelona in particular.<p>We want to hire great people to solve large-scale challenges and build industry-leading new products. In short, if you've got good software industry and tech company experience, know what best practices look like, and have the drive to improve product and people around you, we're interested.<p>I see a lot of freedom, responsibility, accountability here. We have room to make decisions, move fast, and the encouragement to make things better. It's exciting.<p>Please ping me an email at jakub.kadlubiec@skyscanner.net if you want me to refer you, and\/or have questions.\nPermanent &amp; onsite roles only. Relocation \/ visa assistance for senior roles.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Ask HN: Who is hiring? (November 2017)",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T14:28:25.000Z",
+      "title": null,
+      "url": null,
+      "author": "Acconut",
+      "points": null,
+      "story_text": null,
+      "comment_text": "&gt; I&#x27;ve done lots of event loops in the past (eg hellepoll in c++) and think that the cost of that is on the programmer - keeping track of things, callbacks, state machines and things and avoiding using the stack for state etc is all hard work and easy to mess up.<p>I very much agree. In the past, I have had quite some fun developing a few streaming parsers using Node.js, which also uses an event loop. And while these parser worked relatively good and efficient, debugging them was not an easy task. In addition, understanding the code is also a though challenge, especially for people other than the original authors.<p>When I started using Go more and more, I really enjoyed the different I&#x2F;O-model using goroutines and blocking function calls. It also has a few drawbacks but the mental model is a lot easier to reason about.",
+      "num_comments": null,
+      "story_id": 15624432,
+      "story_title": "Fast event loop networking for Go",
+      "story_url": "https:\/\/github.com\/tidwall\/evio",
+      "parent_id": 15624632,
+      "created_at_i": 1509805705,
+      "_tags": [
+        "comment",
+        "author_Acconut",
+        "story_15624432"
+      ],
+      "objectID": "15625139",
+      "_highlightResult": {
+        "author": {
+          "value": "Acconut",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "&gt; I've done lots of event loops in the past (eg hellepoll in c++) and think that the cost of that is on the programmer - keeping track of things, callbacks, state machines and things and avoiding using the stack for state etc is all hard work and easy to mess up.<p>I very much agree. In the past, I have had quite some fun developing a few streaming parsers using <em>Node.js<\/em>, which also uses an event loop. And while these parser worked relatively good and efficient, debugging them was not an easy task. In addition, understanding the code is also a though challenge, especially for people other than the original authors.<p>When I started using Go more and more, I really enjoyed the different I\/O-model using goroutines and blocking function calls. It also has a few drawbacks but the mental model is a lot easier to reason about.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Fast event loop networking for Go",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/github.com\/tidwall\/evio",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T14:17:33.000Z",
+      "title": null,
+      "url": null,
+      "author": "jakecraige",
+      "points": null,
+      "story_text": null,
+      "comment_text": "It&#x27;s not so much that miners would ignore empty transactions, it&#x27;s that the spammer would need to pay the miner fee to get each transaction in the block which would end up being very expensive and unsustainable long term.<p>For the second idea, this wouldn&#x27;t really work either. When each node receives a transaction it will validate it first before broadcasting it to other nodes, so it would be stopped from propagating through the network pretty quickly and no one would attempt to include it in a block and run do PoW work it which is the most time consuming part.<p>I suppose in theory if you had a large enough network and could target a ton of nodes individually you might be able to do some form of damage but that&#x27;s likely a pretty impossible amount of power and similarly to the previous example you could maybe bloat it a bit but it would be very expensive to sustain an attack like this.",
+      "num_comments": null,
+      "story_id": 15624942,
+      "story_title": "Ask HN: Are these possible ways to slow down a blockchain?",
+      "story_url": null,
+      "parent_id": 15624942,
+      "created_at_i": 1509805053,
+      "_tags": [
+        "comment",
+        "author_jakecraige",
+        "story_15624942"
+      ],
+      "objectID": "15625100",
+      "_highlightResult": {
+        "author": {
+          "value": "jakecraige",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "It's not so much that miners would ignore empty transactions, it's that the spammer would need to pay the miner fee to get each transaction in the block which would end up being very expensive and unsustainable long term.<p>For the second idea, this wouldn't really work either. When each node receives a transaction it will validate it first before broadcasting it to other <em>nodes<\/em>, so it would be stopped from propagating through the network pretty quickly and no one would attempt to include it in a block and run do PoW work it which is the most time consuming part.<p>I suppose in theory if you had a large enough network and could target a ton of <em>nodes<\/em> individually you might be able to do some form of damage but that's likely a pretty impossible amount of power and similarly to the previous example you could maybe bloat it a bit but it would be very expensive to sustain an attack like this.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Ask HN: Are these possible ways to slow down a blockchain?",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T14:12:21.000Z",
+      "title": null,
+      "url": null,
+      "author": "ordinaryperson",
+      "points": null,
+      "story_text": null,
+      "comment_text": "So much hate for Meteor here, but I use it at work and it&#x27;s been great for what we wanted.<p>I inherited a vendor-built website that was Craft CMS (a Yii framework) sitting atop a Laravel application that was integrated with Google Maps and indexed by Solr -- debugging even a minor issue could take days.<p>Meteor is fast and full-stack, no more knitting together 13 different frameworks. It&#x27;s integrated with Apache Cordova, so you can easily port your website to mobile apps. It supports importing of node packages. Is Meteor the answer for everything? Of course not. But for a fast, data-driven app it&#x27;s still great, IMHO.<p>The alternatives recommended in this thread so far are:<p>1. Firebase + React&#x2F;Angular<p>2. Elixir&#x2F;Phoenix + PostgreSQL&#x27;s LISTEN&#x2F;NOTIFY<p>3. Deepstream.io<p>4. Kotlin<p>5. .NET Core<p>6. Vue and Rails<p>If those things work for you, great, but I&#x27;m not sure they&#x27;re 10x better than Meteor or that MDG is in some kind of death spiral -- it&#x27;s still a viable solution for fast NodeJS apps.",
+      "num_comments": null,
+      "story_id": 15624623,
+      "story_title": "Ask HN: Is Meteor.js still a thing?",
+      "story_url": null,
+      "parent_id": 15624623,
+      "created_at_i": 1509804741,
+      "_tags": [
+        "comment",
+        "author_ordinaryperson",
+        "story_15624623"
+      ],
+      "objectID": "15625079",
+      "_highlightResult": {
+        "author": {
+          "value": "ordinaryperson",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "So much hate for Meteor here, but I use it at work and it's been great for what we wanted.<p>I inherited a vendor-built website that was Craft CMS (a Yii framework) sitting atop a Laravel application that was integrated with Google Maps and indexed by Solr -- debugging even a minor issue could take days.<p>Meteor is fast and full-stack, no more knitting together 13 different frameworks. It's integrated with Apache Cordova, so you can easily port your website to mobile apps. It supports importing of node packages. Is Meteor the answer for everything? Of course not. But for a fast, data-driven app it's still great, IMHO.<p>The alternatives recommended in this thread so far are:<p>1. Firebase + React\/Angular<p>2. Elixir\/Phoenix + PostgreSQL's LISTEN\/NOTIFY<p>3. Deepstream.io<p>4. Kotlin<p>5. .NET Core<p>6. Vue and Rails<p>If those things work for you, great, but I'm not sure they're 10x better than Meteor or that MDG is in some kind of death spiral -- it's still a viable solution for fast <em>NodeJS<\/em> apps.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Ask HN: Is Meteor.js still a thing?",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T13:50:43.000Z",
+      "title": null,
+      "url": null,
+      "author": "franciscop",
+      "points": null,
+      "story_text": null,
+      "comment_text": "My opinion is that Node.js follows a lot more the philosophy of small reusable modules, which is a lot more flexible with the disadvantage of a lot more initial work. I still don&#x27;t think server.js is Django.js-like, since it leaves most decisions up to the developers. The main difference is that Django, Rails, Sails, etc are opinionated about both the libraries AND the code structure, while I tried to keep server opinionated only about some basic functionality, but leaving the more advanced and code structure totally up to the devs using it.<p>But I do try to do batteries-included, because express-like workflow involves following a bunch of steps that are basically the same for most projects.<p>Edit, maybe you are interested on Sails: <a href=\"https:&#x2F;&#x2F;sailsjs.com&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;sailsjs.com&#x2F;<\/a>",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 a modern express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15624953,
+      "created_at_i": 1509803443,
+      "_tags": [
+        "comment",
+        "author_franciscop",
+        "story_15624206"
+      ],
+      "objectID": "15624994",
+      "_highlightResult": {
+        "author": {
+          "value": "franciscop",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "My opinion is that <em>Node.js<\/em> follows a lot more the philosophy of small reusable modules, which is a lot more flexible with the disadvantage of a lot more initial work. I still don't think server.js is Django.js-like, since it leaves most decisions up to the developers. The main difference is that Django, Rails, Sails, etc are opinionated about both the libraries AND the code structure, while I tried to keep server opinionated only about some basic functionality, but leaving the more advanced and code structure totally up to the devs using it.<p>But I do try to do batteries-included, because express-like workflow involves following a bunch of steps that are basically the same for most projects.<p>Edit, maybe you are interested on Sails: <a href=\"https:\/\/sailsjs.com\/\" rel=\"nofollow\">https:\/\/sailsjs.com\/<\/a>",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 a modern express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T13:44:39.000Z",
+      "title": null,
+      "url": null,
+      "author": "moltar",
+      "points": null,
+      "story_text": null,
+      "comment_text": "In which dreamland you get paid USD$155 per hour for Node.js work?",
+      "num_comments": null,
+      "story_id": 15624677,
+      "story_title": "Freelancer.com has ruined my life",
+      "story_url": "https:\/\/www.trustpilot.com\/reviews\/59fdae7d31302a07249dc4fe",
+      "parent_id": 15624825,
+      "created_at_i": 1509803079,
+      "_tags": [
+        "comment",
+        "author_moltar",
+        "story_15624677"
+      ],
+      "objectID": "15624971",
+      "_highlightResult": {
+        "author": {
+          "value": "moltar",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "In which dreamland you get paid USD$155 per hour for <em>Node.js<\/em> work?",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Freelancer.com has ruined my life",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/www.trustpilot.com\/reviews\/59fdae7d31302a07249dc4fe",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T13:39:25.000Z",
+      "title": null,
+      "url": null,
+      "author": "mynegation",
+      "points": null,
+      "story_text": null,
+      "comment_text": "Coming from Python, my understanding is that Express is sort of like flask (add your own everything), and something like sails.js is like Django (bundled, convention over configuration). I am wondering, why, unlike, Python and Rails, Django-type frameworks did not take off in Node.js? I would like to have a popular \u201cDjango.js\u201d, so I am rooting for this project.",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 a modern express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15624206,
+      "created_at_i": 1509802765,
+      "_tags": [
+        "comment",
+        "author_mynegation",
+        "story_15624206"
+      ],
+      "objectID": "15624953",
+      "_highlightResult": {
+        "author": {
+          "value": "mynegation",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "Coming from Python, my understanding is that Express is sort of like flask (add your own everything), and something like sails.js is like Django (bundled, convention over configuration). I am wondering, why, unlike, Python and Rails, Django-type frameworks did not take off in <em>Node.js<\/em>? I would like to have a popular \u201cDjango.js\u201d, so I am rooting for this project.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 a modern express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T13:35:54.000Z",
+      "title": "Ask HN: Are these possible ways to slow down a blockchain?",
+      "url": null,
+      "author": "marmalade92",
+      "points": 3,
+      "story_text": "I am very skeptical for the blockchain technology and although I use it as a gambling addiction (or it uses me) I still use zero crypto based technologies.<p>Within my skepticism, I started wondering what can make the chain vulnerable?<p>My first idea was flooding with almost non worthy transactions therefore wasting the miners. This was quickly debunked as I found out the miners would ignore &#x27;empty&#x27; transactions.<p>Another idea is, what if I as user A say want to transfer to user B, but I mention an amount of coins that actually I do not own and spam it. Would the miners have to traverse all the way to the back or are there &#x27;checkpoints&#x27; that can assure short travels?<p>The last one is a bit more difficult. However can a big enough network of nodes, insert itself and start crunching the chain errors-fully on purpose to &#x27;break&#x27; the chain?<p>Excuse my ignorance.",
+      "comment_text": null,
+      "num_comments": 3,
+      "story_id": null,
+      "story_title": null,
+      "story_url": null,
+      "parent_id": null,
+      "created_at_i": 1509802554,
+      "_tags": [
+        "story",
+        "author_marmalade92",
+        "story_15624942",
+        "ask_hn"
+      ],
+      "objectID": "15624942",
+      "_highlightResult": {
+        "title": {
+          "value": "Ask HN: Are these possible ways to slow down a blockchain?",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "author": {
+          "value": "marmalade92",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_text": {
+          "value": "I am very skeptical for the blockchain technology and although I use it as a gambling addiction (or it uses me) I still use zero crypto based technologies.<p>Within my skepticism, I started wondering what can make the chain vulnerable?<p>My first idea was flooding with almost non worthy transactions therefore wasting the miners. This was quickly debunked as I found out the miners would ignore 'empty' transactions.<p>Another idea is, what if I as user A say want to transfer to user B, but I mention an amount of coins that actually I do not own and spam it. Would the miners have to traverse all the way to the back or are there 'checkpoints' that can assure short travels?<p>The last one is a bit more difficult. However can a big enough network of <em>nodes<\/em>, insert itself and start crunching the chain errors-fully on purpose to 'break' the chain?<p>Excuse my ignorance.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T13:05:31.000Z",
+      "title": null,
+      "url": null,
+      "author": "literallycancer",
+      "points": null,
+      "story_text": null,
+      "comment_text": "Your article doesn&#x27;t mention how much you paid them. If you are paying someone 5$ per hour, you can&#x27;t expect much.<p>edit: you mention the prices in the comments, so here they are for anyone curious:<p><i>Node.js port 155 USD, Android port 789 USD, Website theme 300 USD. It is not slave wages considering the living costs in the respective countries.<\/i>(sic!)<p>&gt;Node.js port 155 USD<p>This is good for what, 1 hour of work?<p>Pay peanuts, get monkeys.",
+      "num_comments": null,
+      "story_id": 15624677,
+      "story_title": "Freelancer.com has ruined my life",
+      "story_url": "https:\/\/www.trustpilot.com\/reviews\/59fdae7d31302a07249dc4fe",
+      "parent_id": 15624778,
+      "created_at_i": 1509800731,
+      "_tags": [
+        "comment",
+        "author_literallycancer",
+        "story_15624677"
+      ],
+      "objectID": "15624825",
+      "_highlightResult": {
+        "author": {
+          "value": "literallycancer",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "Your article doesn't mention how much you paid them. If you are paying someone 5$ per hour, you can't expect much.<p>edit: you mention the prices in the comments, so here they are for anyone curious:<p><i><em>Node.js<\/em> port 155 USD, Android port 789 USD, Website theme 300 USD. It is not slave wages considering the living costs in the respective countries.<\/i>(sic!)<p>&gt;<em>Node.js<\/em> port 155 USD<p>This is good for what, 1 hour of work?<p>Pay peanuts, get monkeys.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Freelancer.com has ruined my life",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/www.trustpilot.com\/reviews\/59fdae7d31302a07249dc4fe",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T12:57:52.000Z",
+      "title": null,
+      "url": null,
+      "author": "franciscop",
+      "points": null,
+      "story_text": null,
+      "comment_text": "IMHO, and one of the reasons I decided to go with server, <i>simplicity<\/i> is a feature and the advantage of express over Koa. It is hard enough for new users to get started on Node.js, but to have to handle all of the new middleware concepts, PLUS to have to learn a lot more advanced features like generators is a no-go for my framework of choice.<p>- server: return something to reply to the browser. Can use `async` for more advanced features.<p>- express: reply.send() is fairly straightforward. next() for middleware is a new concept but conceptually in the right place (when you are digging a bit deeper in the middleware).<p>- Koa: yield, function with asterisk, etc.<p>So I think Koa is fine for devs who have been a while in JS dev, but the learning curve is too steep to get started. Same as what happens with React and the reason create-react-app has become so popular.",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 a modern express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15624456,
+      "created_at_i": 1509800272,
+      "_tags": [
+        "comment",
+        "author_franciscop",
+        "story_15624206"
+      ],
+      "objectID": "15624793",
+      "_highlightResult": {
+        "author": {
+          "value": "franciscop",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "IMHO, and one of the reasons I decided to go with server, <i>simplicity<\/i> is a feature and the advantage of express over Koa. It is hard enough for new users to get started on <em>Node.js<\/em>, but to have to handle all of the new middleware concepts, PLUS to have to learn a lot more advanced features like generators is a no-go for my framework of choice.<p>- server: return something to reply to the browser. Can use `async` for more advanced features.<p>- express: reply.send() is fairly straightforward. next() for middleware is a new concept but conceptually in the right place (when you are digging a bit deeper in the middleware).<p>- Koa: yield, function with asterisk, etc.<p>So I think Koa is fine for devs who have been a while in JS dev, but the learning curve is too steep to get started. Same as what happens with React and the reason create-react-app has become so popular.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 a modern express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T12:06:50.000Z",
+      "title": null,
+      "url": null,
+      "author": "franciscop",
+      "points": null,
+      "story_text": null,
+      "comment_text": "I totally agree, somewhere in the homepage I explain what this package is for. I decided not to bomb myself and not writing &quot;where you should NOT use it&quot; but I still hint to it. Server is good for small to medium projects where you don&#x27;t want to be writing the same thing again and again. Think of it as express with a bunch of sane defaults and some extra functionality.<p>An extra render engine does not affect on anything except on file size (and a tiny bit of install time), which is cheap nowadays. If you are making a single big project server might not be the best option, since you might want to fine-tune many things. If you are making several projects per year with Node.js then it is perfect, since you don&#x27;t want to waste time doing the same thing again and again.<p>As others commented, express 5 with async&#x2F;await = Koa.js<p>BTW, bodyParser was just added back into the core of express.",
+      "num_comments": null,
+      "story_id": 15624206,
+      "story_title": "Show HN: Server.js \u2013 a modern express alternative",
+      "story_url": "https:\/\/serverjs.io\/",
+      "parent_id": 15624366,
+      "created_at_i": 1509797210,
+      "_tags": [
+        "comment",
+        "author_franciscop",
+        "story_15624206"
+      ],
+      "objectID": "15624661",
+      "_highlightResult": {
+        "author": {
+          "value": "franciscop",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "I totally agree, somewhere in the homepage I explain what this package is for. I decided not to bomb myself and not writing &quot;where you should NOT use it&quot; but I still hint to it. Server is good for small to medium projects where you don't want to be writing the same thing again and again. Think of it as express with a bunch of sane defaults and some extra functionality.<p>An extra render engine does not affect on anything except on file size (and a tiny bit of install time), which is cheap nowadays. If you are making a single big project server might not be the best option, since you might want to fine-tune many things. If you are making several projects per year with <em>Node.js<\/em> then it is perfect, since you don't want to waste time doing the same thing again and again.<p>As others commented, express 5 with async\/await = Koa.js<p>BTW, bodyParser was just added back into the core of express.",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Show HN: Server.js \u2013 a modern express alternative",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/serverjs.io\/",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    },
+    {
+      "created_at": "2017-11-04T11:53:58.000Z",
+      "title": null,
+      "url": null,
+      "author": "willvarfar",
+      "points": null,
+      "story_text": null,
+      "comment_text": "The benchmarks at the bottom of the readme show quite an improvement (with a single thread it seems).<p>I would speculate the performance win is because there is no stack switching and less channels.<p>I&#x27;ve done lots of event loops in the past (eg hellepoll in c++) and think that the cost of that is on the programmer - keeping track of things, callbacks, state machines and things and avoiding using the stack for state etc is all hard work and easy to mess up.<p>I am reminded of this post I saw on HN a while ago <a href=\"https:&#x2F;&#x2F;www.mappingthejourney.com&#x2F;single-post&#x2F;2017&#x2F;08&#x2F;31&#x2F;episode-8-interview-with-ryan-dahl-creator-of-nodejs&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;www.mappingthejourney.com&#x2F;single-post&#x2F;2017&#x2F;08&#x2F;31&#x2F;epi...<\/a> Ryan Dahl, creator of node.js, would just use Go today ;)",
+      "num_comments": null,
+      "story_id": 15624432,
+      "story_title": "Fast event loop networking for Go",
+      "story_url": "https:\/\/github.com\/tidwall\/evio",
+      "parent_id": 15624586,
+      "created_at_i": 1509796438,
+      "_tags": [
+        "comment",
+        "author_willvarfar",
+        "story_15624432"
+      ],
+      "objectID": "15624632",
+      "_highlightResult": {
+        "author": {
+          "value": "willvarfar",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "comment_text": {
+          "value": "The benchmarks at the bottom of the readme show quite an improvement (with a single thread it seems).<p>I would speculate the performance win is because there is no stack switching and less channels.<p>I've done lots of event loops in the past (eg hellepoll in c++) and think that the cost of that is on the programmer - keeping track of things, callbacks, state machines and things and avoiding using the stack for state etc is all hard work and easy to mess up.<p>I am reminded of this post I saw on HN a while ago <a href=\"https:\/\/www.mappingthejourney.com\/single-post\/2017\/08\/31\/episode-8-interview-with-ryan-dahl-creator-of-nodejs\/\" rel=\"nofollow\">https:\/\/www.mappingthejourney.com\/single-post\/2017\/08\/31\/epi...<\/a> Ryan Dahl, creator of <em>node.js<\/em>, would just use Go today ;)",
+          "matchLevel": "full",
+          "fullyHighlighted": false,
+          "matchedWords": [
+            "nodejs"
+          ]
+        },
+        "story_title": {
+          "value": "Fast event loop networking for Go",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        },
+        "story_url": {
+          "value": "https:\/\/github.com\/tidwall\/evio",
+          "matchLevel": "none",
+          "matchedWords": [
+            
+          ]
+        }
+      }
+    }
+  ],
+  "nbHits": 36823,
+  "page": 0,
+  "nbPages": 50,
+  "hitsPerPage": 20,
+  "processingTimeMS": 4,
+  "exhaustiveNbHits": false,
+  "query": "nodejs",
+  "params": "advancedSyntax=true&analytics=false&query=nodejs"
+}
