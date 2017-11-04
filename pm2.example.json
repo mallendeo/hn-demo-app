@@ -1,6 +1,11 @@
 {
   "apps": [{
     "name": "hn-demo-app",
-    "script": "app.js"
+    "script": "app.js",
+    "env": {
+      "PORT": "",
+      "MONGO_DB_URL": "",
+      "MONGO_DB_PORT": ""
+    }
   }]
 }
