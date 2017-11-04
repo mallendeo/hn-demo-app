@@ -6,6 +6,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 const hn = require('./lib/hn')
+const post = require('./components/post')
 
 const {
   PORT = 3000,
@@ -13,9 +14,12 @@ const {
   MONGO_DB_URL = `mongodb://localhost:${MONGO_DB_PORT}`
 } = process.env
 
+// Mongoose connection
 mongoose.Promise = Promise
 mongoose.connect(MONGO_DB_URL, { useMongoClient: true })
+
 const db = mongoose.connection
+db.on('error', e => console.error(`Connection error: ${e}`))
 
 // HN background daemon
 ;(async () => {
@@ -24,8 +28,9 @@ const db = mongoose.connection
   async function retrieveAndSavePosts () {
     try {
       const posts = await hn.getPosts()
+      await post.insertPosts(posts)
     } catch (e) {
-      console.error(`There was an error retrieving the posts.`)
+      console.error(`HN daemon error: ${e.message}`)
     }
   }
   
