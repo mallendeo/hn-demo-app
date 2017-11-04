@@ -3,6 +3,8 @@
 const post = require('./')
 
 module.exports = router => {
+
+  // Delete posts by id (not HN objectID)
   router.delete('/:id', async (req, res) => {
     const { params: { id } } = req
   

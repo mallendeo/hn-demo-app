@@ -44,12 +44,12 @@ db.on('error', e => console.error(`Connection error: ${e}`))
   setInterval(retrieveAndSavePosts, min(60))
 })()
 
-const router = new express.Router()
-
 app.set('view engine', 'pug')
 app.use(express.static(`${__dirname}/public`))
 
-// inject post router
+const router = new express.Router()
+
+// Inject post router
 postRouter(router)
 
 app.use('/posts', router)
