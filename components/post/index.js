@@ -1,9 +1,15 @@
 'use strict'
 
 const Post = require('./model')
+const moment = require('moment')
 
 async function getPosts (limit = 20) {
-  return Post.find({}).limit(limit)
+  const posts = await Post.find({}).limit(limit).lean()
+
+  return posts.map(post => ({
+    ...post,
+    fromNow: moment(post.created_at).fromNow()
+  }))
 }
 
 async function insertPosts (posts) {
