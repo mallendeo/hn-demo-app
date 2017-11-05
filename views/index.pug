@@ -17,7 +17,8 @@ html(lang="en")
       table.table.table-hover
         tbody
           each post in posts
-            - const url = `https://news.ycombinator.com/item?id=${post.objectID}`
+            - const hnPostURL = `https://news.ycombinator.com/item?id=${post.objectID}`
+            - const url = post.url ||hnPostURL
             tr.table-row(data-url=url)
               th(scope="row")
                 a.table-row__link(href=url target="_blank")
