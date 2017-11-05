@@ -19,7 +19,7 @@ async function getPosts (limit = 20) {
     
     return {
       ...post,
-      fromNow:
+      prettyDate:
         timestamp.isSame(today, 'd') && timestamp.format('hh:mm a') ||
         timestamp.isSame(yesterday, 'd') && 'Yesterday' ||
         timestamp.format('MMM DD')
